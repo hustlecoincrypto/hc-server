@@ -1,19 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from database import SessionLocal
 from models import Transaction, User
 from schemas import TransactionCreate, TransactionOut, BalanceOut
 from routers.auth import get_current_user
 
-router = APIRouter(prefix="/transactions", tags=["transactions"])
+from dependencies import get_db
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+router = APIRouter(prefix="/transactions", tags=["transactions"])
 
 def get_balance(db: Session, user_id: int) -> int:
     credits = db.query(func.coalesce(func.sum(Transaction.amount_hc), 0))\
