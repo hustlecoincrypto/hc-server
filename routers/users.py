@@ -1,20 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from database import SessionLocal
 from models import User
 from schemas import UserCreate, UserOut
 from passlib.context import CryptContext
 
+from dependencies import get_db
+
 router = APIRouter(prefix="/users", tags=["users"])
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.get("", response_model=list[UserOut])
 def list_users(db: Session = Depends(get_db)):
