@@ -11,7 +11,7 @@ app = FastAPI(title="HustleCoin Backend")
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://your-frontend-domain.com", # <-- replace with Mushteba domain when you have it
+    "https://mushteba.com",
 ]
 app.add_middleware(
     CORSMiddleware,
