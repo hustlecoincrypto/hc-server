@@ -1,14 +1,14 @@
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { LogBox } from "react-native";
+import { LogBox, StatusBar, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useIconFonts } from "@/src/hooks/use-icon-fonts";
 
-
 // Disable logbox errors etc so that users can see the app
 // and agent works as expected.
-LogBox.ignoreAllLogs(true)
+LogBox.ignoreAllLogs(true);
 
 // Keep the native splash visible from cold start until icon fonts register.
 // Required because @expo/vector-icons' componentDidMount fallback fires
@@ -29,5 +29,12 @@ export default function RootLayout() {
   // the app — icons will tofu, but the app still boots.
   if (!loaded && !error) return null;
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <SafeAreaProvider>
+      <View style={{ flex: 1, backgroundColor: "#0A0B10" }}>
+        <StatusBar barStyle="light-content" backgroundColor="#0A0B10" />
+        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: "#0A0B10" } }} />
+      </View>
+    </SafeAreaProvider>
+  );
 }
