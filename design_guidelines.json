@@ -1,0 +1,132 @@
+{
+  "theme_and_archetype": {
+    "theme": "dark",
+    "archetype_primary": "Archetype 5 (Luxury)",
+    "archetype_secondary": "Archetype 2 (Performance Pro)",
+    "description": "A premium, high-end football championship aesthetic. Dark background heavily utilizes obsidian and midnight tones, accented by a vibrant but sophisticated gold system. Avoids typical 'fintech-bro' or neon 'cyberpunk' looks. UI must feel tactile, cinematic, and authoritative."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit",
+      "style": "bold, geometric, premium",
+      "tracking": "tracking-tight",
+      "banned_fonts": ["Inter", "Roboto", "Open Sans", "Syne"]
+    },
+    "body": {
+      "font_family": "Manrope",
+      "style": "clean, highly readable on mobile data-heavy views",
+      "tracking": "tracking-normal"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl font-black",
+      "h2": "text-2xl sm:text-3xl font-bold",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body": "text-base",
+      "small_labels": "text-xs tracking-[0.2em] uppercase font-bold"
+    }
+  },
+  "colors": {
+    "backgrounds": {
+      "app_base": "#0A0B10",
+      "surface_base": "#151821",
+      "glass_surface": "bg-black/40 backdrop-blur-2xl border-white/10"
+    },
+    "accents": {
+      "primary_gold": "#E3A336",
+      "primary_gold_hover": "#F0B654",
+      "secondary_green": "#2E7D32",
+      "alert_red": "#D32F2F"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "tertiary": "#71717A",
+      "gold_text": "#E3A336"
+    }
+  },
+  "spacing_and_layout": {
+    "mobile_first": true,
+    "max_width_desktop": "max-w-md mx-auto",
+    "padding_scale": {
+      "container": "p-4 sm:p-6",
+      "card_internal": "p-6",
+      "dense_admin": "p-4"
+    },
+    "navigation": {
+      "player_tab_bar": "fixed bottom-0 w-full h-16 bg-[#0A0B10]/90 backdrop-blur-xl border-t border-white/10 flex justify-around items-center z-50",
+      "admin_tab_bar": "fixed bottom-0 w-full h-16 bg-[#151821] border-t border-white/5 flex justify-around items-center z-50"
+    }
+  },
+  "surfaces_and_components": {
+    "glass_cards": {
+      "strategy": "Glassmorphism (The 'Crystal' Variant) for premium event displays.",
+      "classes": "bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+    },
+    "admin_panels": {
+      "strategy": "Neumorphism & Grid Borders for data clarity (SafeLock controls).",
+      "classes": "bg-[#151821] border border-white/5 rounded-lg"
+    },
+    "buttons": {
+      "primary": "bg-[#E3A336] text-black font-bold hover:bg-[#F0B654] rounded-full px-6 py-3 transition-colors",
+      "secondary_glass": "bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 rounded-full px-6 py-3 transition-all"
+    }
+  },
+  "icons_and_assets": {
+    "library": "lucide-react",
+    "style": "Clean, scalable, uniform stroke width (1.5px or 2px)"
+  },
+  "language_and_copy": {
+    "player_ui": {
+      "locale": "Portuguese (Angola-friendly)",
+      "examples": {
+        "events_tab": "EVENTOS",
+        "live_matches": "CORRIDAS AO VIVO",
+        "leaderboard": "Tabela de Classificação",
+        "missions": "Missões",
+        "points": "Pontos",
+        "disclaimer": "Recompensas em Game HC. Não são apostas, salários, nem pagamentos garantidos."
+      }
+    },
+    "admin_ui": {
+      "locale": "English",
+      "examples": {
+        "dashboard": "Event Governor",
+        "safelock": "SafeLock Control",
+        "status": "ADMIN_REVIEW_REQUIRED",
+        "audit_log": "Audit Log"
+      }
+    }
+  },
+  "image_urls": {
+    "hero_stadium_dark": {
+      "url": "https://images.unsplash.com/photo-1706675780107-7c43cc487928?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxkYXJrJTIwZm9vdGJhbGwlMjBzdGFkaXVtJTIwbmlnaHR8ZW58MHx8fHwxNzgzMTc3MjA4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dark football stadium at night. Perfect for the main player dashboard header or background."
+    },
+    "soccer_field_aerial": {
+      "url": "https://images.pexels.com/photos/15779126/pexels-photo-15779126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Aerial view of an illuminated sports stadium at night. Great for live match event details."
+    },
+    "gold_texture_abstract": {
+      "url": "https://images.unsplash.com/photo-1545873509-33e944ca7655?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxnb2xkJTIwdGV4dHVyZSUyMGRhcmt8ZW58MHx8fHwxNzgzMTc3MjA4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Gold metallic foil texture. Good to use as an overlaid texture for premium cards or high-rank leaderboards (with multiply/screen blend modes)."
+    }
+  },
+  "data_testid_guidelines": {
+    "rule": "All interactive and key informational elements MUST include a data-testid attribute.",
+    "convention": "kebab-case, role-based",
+    "examples": [
+      "data-testid=\"event-card-brasil-noruega\"",
+      "data-testid=\"safelock-approve-button\"",
+      "data-testid=\"player-tab-leaderboard\"",
+      "data-testid=\"admin-tab-safelock\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a mobile-first responsive layout (use a max-width container like max-w-md mx-auto on desktop screens to simulate a mobile app frame).",
+    "Use pure HTML and Tailwind for layout structures, and Shadcn UI strictly for complex interactions (dropdowns, tabs, dialogs).",
+    "Implement two distinct flows: A Portuguese 'Player' flow featuring heavy glassmorphism, gold accents, and gamification UI, and an English 'Admin/Governor' flow featuring tighter density, neumorphic borders, and red/green alert states for SafeLock.",
+    "Ensure 'Game HC' is clearly presented as an in-game asset, with the Portuguese disclaimer highly visible during reward flows.",
+    "Integrate provided images for hero headers and event backgrounds with a strong black/gradient overlay (bg-gradient-to-t from-[#0A0B10] to-transparent) so text contrast remains AA compliant."
+  ]
+}
