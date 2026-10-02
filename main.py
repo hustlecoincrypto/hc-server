@@ -15,7 +15,7 @@ from routers import users, auth, transactions
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="HustleCoin Public Reference Backend")
+app = FastAPI(title="HustleCoin Backend")
 
 # add your web app origin here (and localhost for dev)
 origins = [
@@ -33,7 +33,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "role": "public-reference"}
+    return {"status": "ok"}
 
 app.include_router(users.router)
 app.include_router(auth.router)
