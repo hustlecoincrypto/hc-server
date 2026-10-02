@@ -1,3 +1,13 @@
+"""HustleCoin public reference backend scaffold.
+
+This module is retained as public example/legacy code. It is NOT the
+authoritative gameplay backend deployed at https://hustlecoin-backend.fly.dev
+and must not be used as proof of production Admin/Game Ops, Mongo, SafeLock,
+payout, marketplace, or gameplay behavior.
+
+See README.md and PUBLIC_RUNTIME_RELATIONSHIP.md.
+"""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
